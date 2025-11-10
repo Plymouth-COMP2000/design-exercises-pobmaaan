@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="    Welcome To\nRestaurant Name"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="167dp" />
+
+    <Button
+        android:id="@+id/button_staff"
+        android:layout_width="87dp"
+        android:layout_height="61dp"
+        android:padding="16dp"
+        android:text="Staff"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="308dp"
+        tools:layout_editor_absoluteY="39dp" />
+
+    <Button
+        android:id="@+id/button_staff"
+        android:layout_width="111dp"
+        android:layout_height="67dp"
+        android:padding="16dp"
+        android:text="Sign Up"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="227dp"
+        tools:layout_editor_absoluteY="429dp" />
+
+    <Button
+        android:id="@+id/button_staff"
+        android:layout_width="111dp"
+        android:layout_height="67dp"
+        android:padding="16dp"
+        android:text="Log In"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="429dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

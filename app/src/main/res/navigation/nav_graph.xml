@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/reservationsFragment">
+
+    <fragment
+        android:id="@+id/reservationsFragment"
+        android:name="com.example.restaurantapp.StaffDashboardFragment"
+        android:label="Reservations"
+        tools:layout="@layout/fragment_staff_dashboard" />
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.restaurantapp.MenuDashboardFragment"
+        android:label="Menu"
+        tools:layout="@layout/fragment_menu_dashboard" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.restaurantapp.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/addMenuItemFragment"
+        android:name="com.example.restaurantapp.AddMenuItemFragment"
+        android:label="Add Menu Item"
+        tools:layout="@layout/fragment_add_menu_item" />
+
+    <fragment
+        android:id="@+id/amendMenuItemFragment"
+        android:name="com.example.restaurantapp.AmendMenuItemFragment"
+        android:label="Amend Menu Item"
+        tools:layout="@layout/fragment_amend_menu_item" />
+
+</navigation>

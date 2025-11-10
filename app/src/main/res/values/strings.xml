@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">RestaurantApp</string>
+    <string-array name="menu_categories">
+        <item>Select Location</item>
+        <item>Starters</item>
+        <item>Mains</item>
+        <item>Desserts</item>
+        <item>Drinks</item>
+    </string-array>
+    <string-array name="table_numbers">
+        <item>Select Table</item>
+        <item>Table 1</item>
+        <item>Table 2</item>
+        <item>Table 3</item>
+        <item>Table 4</item>
+        <item>Table 5</item>
+    </string-array>
+</resources>
