@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
@@ -10,119 +9,73 @@
         android:id="@+id/settings_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:text="Settings"
         android:textSize="38sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/notifications_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/settings_title"
         android:layout_marginTop="24dp"
         android:text="Notifications"
         android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settings_title" />
+        android:textStyle="bold" />
 
-    <TableLayout
-        android:id="@+id/tableLayout"
-        android:layout_width="0dp"
+    <RadioGroup
+        android:id="@+id/notification_options"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:stretchColumns="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notifications_title">
+        android:layout_below="@id/notifications_title"
+        android:layout_marginTop="16dp">
 
-        <TableRow>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="16dp"
-                android:text="New Reservation"
-                android:textSize="18sp" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:padding="16dp" />
-        </TableRow>
-
-        <View
+        <RadioButton
+            android:id="@+id/radio_menu_changes"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
+            android:layout_height="wrap_content"
+            android:text="Menu Changes"
+            android:textSize="18sp" />
 
-        <TableRow>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="16dp"
-                android:text="Reservation Amended"
-                android:textSize="18sp" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:padding="16dp" />
-        </TableRow>
-
-        <View
+        <RadioButton
+            android:id="@+id/radio_new_reservations"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
+            android:layout_height="wrap_content"
+            android:text="New Reservations"
+            android:textSize="18sp" />
 
-        <TableRow>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="16dp"
-                android:text="Menu Change"
-                android:textSize="18sp" />
+        <RadioButton
+            android:id="@+id/radio_reservation_changes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reservation Changes"
+            android:textSize="18sp" />
 
-            <androidx.appcompat.widget.SwitchCompat
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:padding="16dp" />
-        </TableRow>
+        <RadioButton
+            android:id="@+id/radio_reservation_confirmation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reservation Confirmation"
+            android:textSize="18sp" />
 
-    </TableLayout>
+        <RadioButton
+            android:id="@+id/radio_reservation_reminder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reservation Reminder"
+            android:textSize="18sp" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_settings"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:menu="@menu/bottom_nav_menu"
-        app:selectedItemId="@id/settingsFragment"/>
+    </RadioGroup>
 
     <Button
-        android:id="@+id/button7"
-        android:layout_width="135dp"
-        android:layout_height="75dp"
-        android:text="Log Out"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="480dp" />`
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="463dp" />
+        android:id="@+id/button_log_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/notification_options"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="Log Out" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

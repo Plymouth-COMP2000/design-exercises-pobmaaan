@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">RestaurantApp</string>
+    <string name="menu_title">Menu</string>
+    <string name="add_item">Add Item</string>
     <string-array name="menu_categories">
         <item>Select Location</item>
         <item>Starters</item>

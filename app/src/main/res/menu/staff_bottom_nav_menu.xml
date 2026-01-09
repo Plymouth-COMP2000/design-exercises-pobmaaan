@@ -10,7 +10,7 @@
         android:icon="@android:drawable/ic_menu_search"
         android:title="Menu" />
     <item
-        android:id="@+id/settingsFragment"
+        android:id="@+id/staffSettingsFragment"
         android:icon="@android:drawable/ic_menu_preferences"
         android:title="Settings" />
 

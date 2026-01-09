@@ -3,25 +3,123 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/reservationsFragment">
+    app:startDestination="@id/roleSelectionFragment">
+
+    <fragment
+        android:id="@+id/roleSelectionFragment"
+        android:name="com.example.restaurantapp.RoleSelectionFragment"
+        android:label="Role Selection"
+        tools:layout="@layout/fragment_role_selection">
+        <action
+            android:id="@+id/action_roleSelectionFragment_to_staffLoginFragment"
+            app:destination="@id/staffLoginFragment" />
+        <action
+            android:id="@+id/action_roleSelectionFragment_to_guestLoginFragment"
+            app:destination="@id/guestLoginFragment" />
+        <action
+            android:id="@+id/action_roleSelectionFragment_to_guestSignUpFragment"
+            app:destination="@id/guestSignUpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/staffLoginFragment"
+        android:name="com.example.restaurantapp.StaffLoginFragment"
+        android:label="Staff Login"
+        tools:layout="@layout/fragment_staff_login">
+        <action
+            android:id="@+id/action_staffLoginFragment_to_reservationsFragment"
+            app:destination="@id/reservationsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/guestLoginFragment"
+        android:name="com.example.restaurantapp.GuestLoginFragment"
+        android:label="Guest Login"
+        tools:layout="@layout/fragment_guest_login">
+        <action
+            android:id="@+id/action_guestLoginFragment_to_guestDashboardFragment"
+            app:destination="@id/guestDashboardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/guestSignUpFragment"
+        android:name="com.example.restaurantapp.GuestSignUpFragment"
+        android:label="Guest Sign Up"
+        tools:layout="@layout/fragment_guest_sign_up">
+        <action
+            android:id="@+id/action_guestSignUpFragment_to_guestDashboardFragment"
+            app:destination="@id/guestDashboardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/guestDashboardFragment"
+        android:name="com.example.restaurantapp.GuestDashboardFragment"
+        android:label="Guest Dashboard"
+        tools:layout="@layout/fragment_guest_dashboard">
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_guestDashboardFragment_to_guestMenuFragment"
+            app:destination="@id/guestMenuFragment" />
+        <action
+            android:id="@+id/action_guestDashboardFragment_to_createReservationFragment"
+            app:destination="@id/createReservationFragment" />
+        <action
+            android:id="@+id/action_guestDashboardFragment_to_amendBookingFragment"
+            app:destination="@id/amendBookingFragment" />
+        <action
+            android:id="@+id/action_guestDashboardFragment_to_guestSettingsFragment"
+            app:destination="@id/guestSettingsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/reservationsFragment"
         android:name="com.example.restaurantapp.StaffDashboardFragment"
         android:label="Reservations"
-        tools:layout="@layout/fragment_staff_dashboard" />
+        tools:layout="@layout/fragment_staff_dashboard">
+        <action
+            android:id="@+id/action_staffDashboardFragment_to_amendBookingFragment"
+            app:destination="@id/amendBookingFragment" />
+        <action
+            android:id="@+id/action_reservationsFragment_to_staffCreateReservationFragment"
+            app:destination="@id/staffCreateReservationFragment" />
+        <action
+            android:id="@+id/action_reservationsFragment_to_openEnquiriesFragment"
+            app:destination="@id/openEnquiriesFragment" />
+        <action
+            android:id="@+id/action_reservationsFragment_to_staffSettingsFragment"
+            app:destination="@id/staffSettingsFragment" />
+        <action
+            android:id="@+id/action_reservationsFragment_to_userManagementFragment"
+            app:destination="@id/userManagementFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.example.restaurantapp.MenuDashboardFragment"
         android:label="Menu"
-        tools:layout="@layout/fragment_menu_dashboard" />
+        tools:layout="@layout/fragment_menu_dashboard">
+        <action
+            android:id="@+id/action_menuFragment_to_addMenuItemFragment"
+            app:destination="@id/addMenuItemFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_amendMenuItemFragment"
+            app:destination="@id/amendMenuItemFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_staffSettingsFragment"
+            app:destination="@id/staffSettingsFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.example.restaurantapp.SettingsFragment"
-        android:label="Settings"
-        tools:layout="@layout/fragment_settings" />
+        android:id="@+id/guestMenuFragment"
+        android:name="com.example.restaurantapp.GuestMenuFragment"
+        android:label="Guest Menu"
+        tools:layout="@layout/fragment_guest_menu">
+        <action
+            android:id="@+id/action_guestMenuFragment_to_guestSettingsFragment"
+            app:destination="@id/guestSettingsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/addMenuItemFragment"
@@ -34,5 +132,96 @@
         android:name="com.example.restaurantapp.AmendMenuItemFragment"
         android:label="Amend Menu Item"
         tools:layout="@layout/fragment_amend_menu_item" />
+
+    <fragment
+        android:id="@+id/amendBookingFragment"
+        android:name="com.example.restaurantapp.AmendBookingFragment"
+        android:label="Amend Booking"
+        tools:layout="@layout/fragment_amend_booking" />
+
+    <fragment
+        android:id="@+id/createReservationFragment"
+        android:name="com.example.restaurantapp.CreateReservationFragment"
+        android:label="Create Reservation"
+        tools:layout="@layout/fragment_create_reservation" />
+
+    <fragment
+        android:id="@+id/staffCreateReservationFragment"
+        android:name="com.example.restaurantapp.StaffCreateReservationFragment"
+        android:label="Staff Create Reservation"
+        tools:layout="@layout/fragment_staff_create_reservation">
+        <action
+            android:id="@+id/action_staffCreateReservationFragment_to_selectTableFragment"
+            app:destination="@id/selectTableFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/openEnquiriesFragment"
+        android:name="com.example.restaurantapp.OpenEnquiriesFragment"
+        android:label="Open Enquiries"
+        tools:layout="@layout/fragment_open_enquiries">
+        <action
+            android:id="@+id/action_openEnquiriesFragment_to_selectTableFragment"
+            app:destination="@id/selectTableFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/selectTableFragment"
+        android:name="com.example.restaurantapp.SelectTableFragment"
+        android:label="Select Table"
+        tools:layout="@layout/fragment_select_table">
+        <argument
+            android:name="reservation"
+            app:argType="com.example.restaurantapp.model.Reservation" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/staffSettingsFragment"
+        android:name="com.example.restaurantapp.StaffSettingsFragment"
+        android:label="Staff Settings"
+        tools:layout="@layout/fragment_staff_settings" />
+
+    <fragment
+        android:id="@+id/guestSettingsFragment"
+        android:name="com.example.restaurantapp.GuestSettingsFragment"
+        android:label="Guest Settings"
+        tools:layout="@layout/fragment_guest_settings" />
+
+    <fragment
+        android:id="@+id/userManagementFragment"
+        android:name="com.example.restaurantapp.UserManagementFragment"
+        android:label="User Management"
+        tools:layout="@layout/fragment_user_management">
+        <action
+            android:id="@+id/action_userManagementFragment_to_userListFragment"
+            app:destination="@id/userListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userListFragment"
+        android:name="com.example.restaurantapp.UserListFragment"
+        android:label="User List"
+        tools:layout="@layout/fragment_user_list">
+        <argument
+            android:name="user_type"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_userListFragment_to_userFormFragment"
+            app:destination="@id/userFormFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userFormFragment"
+        android:name="com.example.restaurantapp.UserFormFragment"
+        android:label="User Form"
+        tools:layout="@layout/fragment_user_form">
+        <argument
+            android:name="user_type"
+            app:argType="string" />
+        <argument
+            android:name="username"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 
 </navigation>

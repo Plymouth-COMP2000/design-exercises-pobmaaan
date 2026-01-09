@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/guestDashboardFragment"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        android:title="Dashboard" />
+    <item
+        android:id="@+id/guestMenuFragment"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="Menu" />
+    <item
+        android:id="@+id/guestSettingsFragment"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="Settings" />
+
+</menu>

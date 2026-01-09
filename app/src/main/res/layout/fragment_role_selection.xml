@@ -1,47 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
 
     <TextView
+        android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="    Welcome To\nRestaurant Name"
+        android:gravity="center"
+        android:text="Welcome To\nRestaurant Name"
         android:textSize="34sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="72dp"
-        tools:layout_editor_absoluteY="167dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button_staff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4" />
 
     <Button
         android:id="@+id/button_staff"
-        android:layout_width="87dp"
-        android:layout_height="61dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="Staff"
+        android:text="Staff Access"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="308dp"
-        tools:layout_editor_absoluteY="39dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button_log_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+        android:layout_marginBottom="24dp"/>
 
     <Button
-        android:id="@+id/button_staff"
-        android:layout_width="111dp"
-        android:layout_height="67dp"
+        android:id="@+id/button_log_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="Sign Up"
+        android:text="Guest Log In"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="227dp"
-        tools:layout_editor_absoluteY="429dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button_sign_up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="16dp"/>
 
     <Button
-        android:id="@+id/button_staff"
-        android:layout_width="111dp"
-        android:layout_height="67dp"
+        android:id="@+id/button_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="Log In"
+        android:text="Guest Sign Up"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="72dp"
-        tools:layout_editor_absoluteY="429dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="48dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
